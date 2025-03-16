@@ -5,11 +5,12 @@ import './App.css';
 function App() {
   const [operation, setOperation] = useState('');
   const [result, setResult] = useState('');
-  const [fullOperation, setFullOperation] = useState(''); //Este estado almacena todas las operaciones pero no se usa como función.
+  const [lastOperation, setLastOperation] = useState('');
 
   const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
   const mathOperators = ['+', '-', '*', '/'];
   const displayValue = result || operation || '0';  //VARIABLE PARA MOSTRAR VALORES EN LA PANTALLA
+  const displayLastOperation = lastOperation || '';  //VARIABLE PARA MOSTRAR SOLO LA OPERACIÓN CUANDO PULSAMOS EN RESULTADO
 
   //SELECTOR DE NÚMEROS
 
@@ -36,36 +37,45 @@ function App() {
   //FUNCION PARA CALCULAR LAS OPERACIONES Y RESULTADOS
 
   const calculateResult = () => {
-    const operations = operation.split(/([+\-*/])/);
-    let currentResult = parseFloat(operations[0]);
+    try {
+      const operations = operation.split(/([+\-*/])/);
+      let currentResult = parseFloat(operations[0]);
 
-    for (let i = 1; i < operations.length; i += 2) {
-      const operator = operations[i];
-      const nextNumber = parseFloat(operations[i + 1]);
+      for (let i = 1; i < operations.length; i += 2) {
+        const operator = operations[i];
+        const nextNumber = parseFloat(operations[i + 1]);
 
-      if (operator === '+') {
-        currentResult += nextNumber;
-      } else if (operator === '-') {
-        currentResult -= nextNumber;
-      } else if (operator === '*') {
-        currentResult *= nextNumber;
-      } else if (operator === '/') {
-        if (nextNumber !== 0) {
-          currentResult /= nextNumber;
-        } else {
-          setResult('Error');
-          return;
+        if (operator === '+') {
+          currentResult += nextNumber;
+        } else if (operator === '-') {
+          currentResult -= nextNumber;
+        } else if (operator === '*') {
+          currentResult *= nextNumber;
+        } else if (operator === '/') {
+          if (nextNumber !== 0) {
+            currentResult /= nextNumber;
+          } else {
+            setResult('Error');
+            setOperation('');
+            return;
+          }
         }
       }
+      setResult(currentResult);
+      setLastOperation(operation);
+      setOperation('');
+    } catch (error) {
+      setResult('Error');
     }
-    setResult(currentResult);
-    setFullOperation(operation + '=' + currentResult);
-    setOperation('');
   };
 
   const handleReset = () => {
-    setResult('');  
-    setOperation('');  
+    setResult('Try again!');
+    setLastOperation('');
+    setTimeout(() => { //temporizador para que cambie el mensaje por 0.
+      setResult('0');
+      setOperation('');
+    }, 1000);
   };
 
 
@@ -74,7 +84,8 @@ function App() {
     <div className="Calculator">
       <div className="Display">
         <div className="Screen">
-          {displayValue}  {}
+        <div>{displayLastOperation}</div>
+        <div>{displayValue}</div> 
         </div>
         <div className="ButtonsContainers">
           <div className="buttonNumbers">
