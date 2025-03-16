@@ -1,0 +1,207 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #FEDF00;
+  background-image: url('/images/Background.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.Calculator {
+  width: 839px;
+  height: 753px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('/images/Backcalculator.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+
+.Display {
+  width: 100%;
+  max-width: 500px;
+  text-align: right;
+  padding: 50px;
+  font-size: 1.5em;
+  border-radius: 5px;
+  background-image: url('/images/visor.svg');
+  background-size: contain; 
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 15px;
+  margin-bottom: -30px;
+}
+
+.Screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  height: 250px;
+  width: 100%;
+  padding: 100px;
+  padding-top: 115px;
+  box-sizing: border-box;
+}
+
+.LastOperation, .CurrentOperation {
+  text-align: right;
+  margin: 5px 0;
+  min-height: 15px;
+  display: flex;
+}
+
+.LastOperation {
+  color: rgb(165, 165, 165);
+  font-size: 14px;
+}
+
+.CurrentOperation {
+  color: white;
+  font-size: 35px;
+}
+
+.ButtonsContainers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 5px;
+  width: 280px;
+  padding-right: 20px;
+  outline: none; 
+}
+
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1;
+  width: 90%;
+  font-size: 20px;
+  background-color: #444;
+  color: white;             
+  border: none;            
+  border-radius: 100%;     
+  cursor: pointer;      
+  outline: none;    
+}
+
+.button-number:hover {
+  background-color: #FEDF00;
+  color: rgb(0, 0, 0);
+  transform: scale(1.0.5);
+}
+
+button:hover {
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  transform: scale(1.05);
+}
+
+button:active {
+  background-color: #888;
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+.button-number:hover {
+  background-color: #FEDF00;
+  color: rgb(0, 0, 0);
+  transform: scale(1.05);
+}
+
+.button-number:focus {
+  outline: none;
+}
+
+
+.button-number:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.button-number:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.button-number:nth-child(3) {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.button-number:nth-child(4) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.button-number:nth-child(5) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.button-number:nth-child(6) {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.button-number:nth-child(7) {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.button-number:nth-child(8) {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.button-number:nth-child(9) {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+.button-number:nth-child(10) {
+  grid-column: 2;
+  grid-row: 4;
+}
+
+
+.button-operator:nth-child(11) {
+  grid-column: 4;
+  grid-row: 1;
+}
+
+.button-operator:nth-child(12) {
+  grid-column: 4;
+  grid-row: 2;
+}
+
+.button-operator:nth-child(13) {
+  grid-column: 4;
+  grid-row: 3;
+}
+
+.button-equal {
+  grid-column: 3;
+  grid-row: 4;
+}
+
+.button-reset {
+  grid-column: 1;
+  grid-row: 4;
+}
