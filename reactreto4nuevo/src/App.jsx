@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './App.css';
+import './styles/OrderButtons.css';
+import './styles/fonts.css';
 
 // Establecemos las variables y los estados:
 function App() {
@@ -12,6 +14,7 @@ function App() {
   const displayValue = result || operation || '0';  //VARIABLE PARA MOSTRAR VALORES EN LA PANTALLA
   const displayLastOperation = lastOperation || '';  //VARIABLE PARA MOSTRAR SOLO LA OPERACIÓN CUANDO PULSAMOS EN RESULTADO
 
+  
   //SELECTOR DE NÚMEROS
 
   const handleNumberClick = (number) => {
@@ -61,13 +64,33 @@ function App() {
           }
         }
       }
-      setResult(currentResult);
-      setLastOperation(operation + '=' );
+
+      let truncatedResult = currentResult.toFixed(4);
+      setResult(parseFloat(truncatedResult));
+
+      setLastOperation(operation.replace(/([+\-*/])/g, ' $1 ') + '=');
       setOperation('');
     } catch (error) {
       setResult('Error');
     }
   };
+
+  //FUNCION PARA CALCULAR CON DECIMALES
+
+const handleDecimal = () => {
+  if (operation === '0') {
+    setOperation('0.');
+  } else if (operation.includes('+') || operation.includes('-') || operation.includes('*') || operation.includes('/')) {
+    const lastOperand = operation.split(/([+\-*/])/).pop();
+    if (!lastOperand.includes('.')) {
+      setOperation(operation + '.');
+    }
+  } else if (!operation.includes('.')) {
+    setOperation(operation + '.');
+  }
+};
+
+  //FUNCION PARA RESETEAR OPERACIONES
 
   const handleReset = () => {
     setResult('Try again!');
@@ -75,7 +98,7 @@ function App() {
     setTimeout(() => { //temporizador para que cambie el mensaje por 0.
       setResult('0');
       setOperation('');
-    }, 1000);
+    }, 500);
   };
 
 
@@ -100,8 +123,10 @@ function App() {
           </button>
         ))}
           <button className="button-equal" onClick={calculateResult}>=</button>
-          <button className="button-reset" onClick={handleReset}>C</button>
+          <button className="button-decimal" onClick={handleDecimal}>.</button>
       </div>
+      <div className="Reset"></div>
+      <button className="button-reset" onClick={handleReset}>C</button>        
     </div>
   );
 }

@@ -1,0 +1,76 @@
+
+.button-number:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  
+  .button-number:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  
+  .button-number:nth-child(3) {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  
+  .button-number:nth-child(4) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  
+  .button-number:nth-child(5) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  
+  .button-number:nth-child(6) {
+    grid-column: 3;
+    grid-row: 2;
+  }
+  
+  .button-number:nth-child(7) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  
+  .button-number:nth-child(8) {
+    grid-column: 2;
+    grid-row: 3;
+  }
+  
+  .button-number:nth-child(9) {
+    grid-column: 3;
+    grid-row: 3;
+  }
+  
+  .button-number:nth-child(10) {
+    grid-column: 2;
+    grid-row: 4;
+  }
+  
+  
+  .button-operator:nth-child(11) {
+    grid-column: 4;
+    grid-row: 1;
+  }
+  
+  .button-operator:nth-child(12) {
+    grid-column: 4;
+    grid-row: 2;
+  }
+  
+  .button-operator:nth-child(13) {
+    grid-column: 4;
+    grid-row: 3;
+  }
+  
+  .button-equal {
+    grid-column: 3;
+    grid-row: 4;
+  }
+  
+  .button-decimal {
+    grid-column: 1;
+    grid-row: 4;
+  }

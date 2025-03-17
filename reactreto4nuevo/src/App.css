@@ -12,6 +12,7 @@ html, body {
   background-image: url('/images/Background.png');
   background-size: cover;
   background-position: center;
+  font-family: 'Varela Round', sans-serif;
 }
 
 .Calculator {
@@ -30,17 +31,16 @@ html, body {
 
 .Display {
   width: 100%;
-  max-width: 500px;
+  max-width: 450px;
   text-align: right;
   padding: 50px;
-  font-size: 1.5em;
   border-radius: 5px;
   background-image: url('/images/visor.svg');
   background-size: contain; 
   background-position: center;
   background-repeat: no-repeat;
   margin-top: 15px;
-  margin-bottom: -30px;
+  margin-bottom: -40px;
 }
 
 .Screen {
@@ -70,7 +70,9 @@ html, body {
 .CurrentOperation {
   color: white;
   font-size: 35px;
+  color: #FEDF00;
 }
+
 
 .ButtonsContainers {
   display: grid;
@@ -78,7 +80,7 @@ html, body {
   grid-template-rows: repeat(4, 1fr);
   gap: 5px;
   width: 280px;
-  padding-right: 20px;
+  padding-right: 30px;
   outline: none; 
 }
 
@@ -89,19 +91,12 @@ button {
   align-items: center;
   aspect-ratio: 1;
   width: 90%;
-  font-size: 20px;
-  background-color: #444;
+  font-size: 23px;
   color: white;             
   border: none;            
   border-radius: 100%;     
   cursor: pointer;      
   outline: none;    
-}
-
-.button-number:hover {
-  background-color: #FEDF00;
-  color: rgb(0, 0, 0);
-  transform: scale(1.0.5);
 }
 
 button:hover {
@@ -119,89 +114,64 @@ button:focus {
   outline: none;
 }
 
+.button-number {
+  background-color: #EDEDED;
+  color: #1F1F1F;
+}
+
 .button-number:hover {
   background-color: #FEDF00;
   color: rgb(0, 0, 0);
-  transform: scale(1.05);
+  transform: scale(1.0.5);
 }
 
 .button-number:focus {
   outline: none;
 }
 
-
-.button-number:nth-child(1) {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.button-number:nth-child(2) {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.button-number:nth-child(3) {
-  grid-column: 3;
-  grid-row: 1;
-}
-
-.button-number:nth-child(4) {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.button-number:nth-child(5) {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.button-number:nth-child(6) {
-  grid-column: 3;
-  grid-row: 2;
-}
-
-.button-number:nth-child(7) {
-  grid-column: 1;
-  grid-row: 3;
-}
-
-.button-number:nth-child(8) {
-  grid-column: 2;
-  grid-row: 3;
-}
-
-.button-number:nth-child(9) {
-  grid-column: 3;
-  grid-row: 3;
-}
-
-.button-number:nth-child(10) {
-  grid-column: 2;
-  grid-row: 4;
-}
-
-
-.button-operator:nth-child(11) {
-  grid-column: 4;
-  grid-row: 1;
-}
-
-.button-operator:nth-child(12) {
-  grid-column: 4;
-  grid-row: 2;
-}
-
-.button-operator:nth-child(13) {
-  grid-column: 4;
-  grid-row: 3;
+.button-operator {
+  background-color: #1F1F1F;
+  color: #ffffff;
 }
 
 .button-equal {
-  grid-column: 3;
-  grid-row: 4;
+  background-color: #1F1F1F;
+  color: #ffffff;
+}
+
+.button-decimal {
+  background-color: #1F1F1F;
+  color: #ffffff;
 }
 
 .button-reset {
-  grid-column: 1;
-  grid-row: 4;
+  background-image: url('/images/reset.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  width: 100px;
+  margin-right: 550px;
+  cursor: pointer;
+  padding: 0;     
+  border-radius: 0;  
+}
+
+.button-reset:hover {
+  background-image: url('/images/reset.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  width: 100px;
+  margin-right: 550px;
+  cursor: pointer;
+  padding: 0;     
+  border-radius: 0;  
 }
