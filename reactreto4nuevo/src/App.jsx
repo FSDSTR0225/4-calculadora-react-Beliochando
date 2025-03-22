@@ -108,9 +108,9 @@ const handleDecimal = () => {
       <div className="Display">
         <div className="Screen">
           <div className="LastOperation">{displayLastOperation}</div>
-          <div className="CurrentOperation">{displayValue}</div> 
+          <div className="CurrentOperation">{displayValue}</div>
         </div>
-      </div>
+    </div>
       <div className="ButtonsContainers">
         {numbers.map((number) => (
           <button key={number} className="button-number" onClick={() => handleNumberClick(number)}>

@@ -49,10 +49,22 @@ html, body {
   justify-content: flex-start;
   align-items: flex-end;
   height: 250px;
-  width: 100%;
-  padding: 100px;
-  padding-top: 115px;
+  width: 300px;
+  margin-left: 70px;
+  padding-top: 110px;
   box-sizing: border-box;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.CurrentOperation {
+  color: #FEDF00;
+  font-size: 35px;
+  line-height: 1.2;
+  text-align: left;
+  flex-shrink: 0;
+  min-width: 0;
 }
 
 .LastOperation, .CurrentOperation {
@@ -66,6 +78,7 @@ html, body {
   color: rgb(165, 165, 165);
   font-size: 14px;
 }
+
 
 .CurrentOperation {
   color: white;
